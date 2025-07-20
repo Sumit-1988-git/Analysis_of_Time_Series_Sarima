@@ -59,7 +59,7 @@ This project leverages time series analysis to forecast monthly gold prices usin
 git clone https://github.com/your-username/gold-price-forecasting.git
 cd gold-price-forecasting
 
-3. **Install the Required Libraries**
+2. **Install the Required Libraries**
 Install dependencies with pip:
 pip install -r requirements.txt
 
