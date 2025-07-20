@@ -39,11 +39,17 @@ This project leverages time series analysis to forecast monthly gold prices usin
 🗃️ **Project Structure**
 
 📁 gold-price-forecasting/
+
 ├── app.py                    # Streamlit application file
+
 ├── arima_gold_model.pkl      # ARIMA model (auto-generated)
+
 ├── sarima_gold_model.pkl     # SARIMA model (auto-generated)
+
 ├── model_deployment.ipynb    # Main notebook for analysis & modeling (optional)
+
 ├── requirements.txt          # Required Python libraries
+
 └── README.md                 # Overview of the project
 
 🚀 **How to Get Started**
