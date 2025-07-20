@@ -1,86 +1,99 @@
 🪙 **Gold Price Forecasting with Time Series Analysis (ARIMA & SARIMA)**
-This project conducts a thorough time series analysis and forecasting of monthly gold prices using the ARIMA and SARIMA models. It also includes a fully interactive Streamlit app for model selection, exploration, and dynamic forecasting.
+
+This project leverages time series analysis to forecast monthly gold prices using ARIMA and SARIMA models. A fully interactive Streamlit app is included for easy exploration, model selection, and dynamic forecasting.
 
 📦 **Key Features**
 
-✅ Time Series Workflow Includes:
+✅ **Time Series Analysis Steps:**
 
-Data Collection from Yahoo Finance for gold prices
+* Download data from Yahoo Finance for gold prices
 
-Trend Visualization over time
+* Trend visualization over time
 
-STL Decomposition to break down trend, seasonality, and noise
+* Perform STL decomposition to extract trend, seasonality, and noise
 
-ADF Test for checking stationarity
+* Conduct the ADF test for stationarity
 
-Differencing to achieve stationarity
+* Apply differencing to achieve stationarity
 
-ACF & PACF Plots to identify model orders
+* Generate ACF and PACF plots for determining model orders
 
-ARIMA & SARIMA Model Building
+* Build ARIMA and SARIMA models
 
-Forecasting for the next 12 months
+* Forecast for the next 12 months
 
-Model Comparison using AIC/BIC
+* Model comparison using AIC criteria
 
-Model Saving with pickle
+* Save models using pickle for future use
 
-🚀 **Getting Started**
+✅ **Streamlit Web Application Features:**
 
-1. Clone the Repository
+* Choose between ARIMA and SARIMA models
+
+* Forecast up to 36 months ahead
+
+* Visualize forecast results along with confidence intervals
+
+* Access a summary of the model and historical gold price data
+
+🗃️ **Project Structure**
+
+📁 gold-price-forecasting/
+├── app.py                    # Streamlit application file
+├── arima_gold_model.pkl      # ARIMA model (auto-generated)
+├── sarima_gold_model.pkl     # SARIMA model (auto-generated)
+├── model_deployment.ipynb    # Main notebook for analysis & modeling (optional)
+├── requirements.txt          # Required Python libraries
+└── README.md                 # Overview of the project
+
+🚀 **How to Get Started**
+
+1. **Clone the Repository**
 
 git clone https://github.com/your-username/gold-price-forecasting.git
 cd gold-price-forecasting
-2. Install Dependencies
-Install the required libraries:
 
-
+3. **Install the Required Libraries**
+Install dependencies with pip:
 pip install -r requirements.txt
-3. Run the Streamlit App
 
+3. **Run the Streamlit App**
+Start the app with:
 streamlit run app.py
-📈 Forecast Visualization Example
-Forecast using the SARIMA model (green) with 95% confidence interval:
 
+🔬 **Insights for ACF & PACF Plots**:
 
-🧠 **Model Information**
+PACF cut-off after lag p → 1
 
-Model	AIC / BIC	Seasonality	Stationarity	Forecast Horizon
-ARIMA	Evaluated	❌ No	Differenced	Short-term
-SARIMA	Evaluated	✅ Yes	Differenced	Seasonal-aware
+ACF cut-off after lag q → 1
 
-🔬 **ACF & PACF Insights:**
-Spikes at seasonal lags in ACF → Add seasonal components
+🧪 **Example ADF Test Output**
 
-PACF cut-off after lag p → Suggests AR order
+ADF Statistic: 1.535441
+p-value: 0.997650
 
-ACF cut-off after lag q → Suggests MA order
+Conclusion: The time series is **non-stationary**.Since, the data that we worked with is not stationary,
+hence we cannot use AR, MA and ARMA models. Differencing is required.
 
-🧪 Example of ADF Test Output
+🧰 **Technologies Utilized**
 
-ADF Statistic: -1.56
-p-value: 0.51
-Conclusion: The time series is **non-stationary**. Differencing is needed.
+* Python
 
-🧰 **Technologies Used**
+* Pandas, Matplotlib, Statsmodels
 
-Python
+* yfinance for data retrieval
 
-Pandas, Matplotlib, Statsmodels
+* Streamlit for interactive UI
 
-yfinance for data fetching
+* Pickle for model serialization
 
-Streamlit for UI
-
-Pickle for model persistence
 
 📌 **requirements.txt**
-For deployment or sharing, use the following requirements.txt:
+For easy deployment or sharing, here's the list of required libraries for the project:
 
-Copy
-streamlit
-pandas
-matplotlib
-statsmodels
-yfinance
-python-dateutil
+* streamlit
+* pandas
+* matplotlib
+* statsmodels
+* yfinance
+* python-dateutil
